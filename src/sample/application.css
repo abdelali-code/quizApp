@@ -1,0 +1,50 @@
+/* JavaFX CSS - Leave this comment until you have at least create one rule which uses -fx-Property */
+#scoreWrap {
+    -fx-padding: 25;
+    -fx-background-color: #16BDD8;
+    -fx-font-size: 18;
+}
+
+.scoreIndice {
+    -fx-font-size: 32;
+    -fx-background-color: #ffffff;
+    -fx-padding: 10 20;
+}
+
+#scoreTxt {
+    -fx-text-fill : #D8E5E1;
+    -fx-font-weight: 700;
+}
+
+#questionContent {
+    -fx-background-color: #D8E5E1;
+
+}
+
+#timer {
+    -fx-text-fill: #00A8D3;
+    -fx-font-size: 50;
+    -fx-font-weight: 800;
+    -fx-padding: 20 0 60 0;
+}
+
+#questionCount {
+    -fx-text-fill: #DF9E72;
+    -fx-font-size: 16;
+    -fx-font-weight: 800;
+    -fx-padding: 0 0 30 0;
+}
+
+#questionBody {
+    -fx-text-fill: #324B50;
+    -fx-font-size: 14;
+    -fx-font-weight: 700;
+    -fx-padding: 0 20 20 20;
+}
+
+#buttonsWrap {
+      -fx-padding: 25;
+     -fx-background-color: #16BDD8;
+     -fx-font-size: 14;
+     -fx-spacing: 20;
+}
