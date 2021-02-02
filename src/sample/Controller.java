@@ -47,21 +47,26 @@ public class Controller implements Initializable {
     private int chCounter = 0;
     private static int level = 1;
     private int sum  = 0;
-    private String qs[] = {"first", "second", "third", "fourth", "fifth", "sixth", "seventh", "eighth"};
-    private String choises[][] = {{"1", "2", "3"}, {"1", "2"}, {"1", "2", "3"}, {"1", "2"}, {"1", "2", "3"}, {"1", "2", "3"}};
-    private String answers[] = {"1", "1", "1", "1", "1"};
+    private String qs[] = {"JAVA est  un langage", "Toutes les classes héritent de la classe", "Par convention une classe", "Est-ce que on peut avoir plusieurs constructeurs pour la même classe", "Dans la ligne \"public class A implements B\", B est:"};
+    private String choises[][] = {{"Compilé", "Interprété", "Compilé et interpreté"}, {"Main", "Object", "AWT"}, {"est en minuscule", "commence par une majuscule", "est en majuscules"}, {"oui", "non"}, {"Interfacce", "Classe parent", "Package"}};
+    private String answers[] = {"Compilé et interpreté", "Object", "commence par une majuscule", "oui", "Interfacce"};
     private String userAns[] = new String[5];
 
 
     // for level 2
-    private String qs2[] = {"hhhh2", "ddddddddd 2", "fffffffffff 2", "fffffffff 2", "fifth 2", "sixth 2", "seventh 2", "eighth 2"};
-    private String choises2[][] = {{"1", "2", "3"}, {"1", "2"}, {"1", "2", "3"}, {"1", "2"}, {"1", "2", "3"}, {"1", "2", "3"}};
-    private String answers2[] = {"1", "1", "1", "1", "1"};
+    private String qs2[] = {"Après la compilation, un programme écrit en JAVA, il se transforme en programme en bytecodeQuelle est l’extension du programme en bytecode?",
+            "Class Test{Public Test () {\nSystem.out.println(”Bonjour”);\n}\npublic Test (int i) {\nthis(); System.out.println(”Nous sommes en ”+i+”!”);}; }\nqu’affichera l’instruction suivante? Test t1=new Test (2018);\n",
+            "Voici un constructeur de la classeEmployee, y-a-t'il un problème ?Public void Employe(String n){Nom=n;}",
+            "Pour spécifier que la variable ne pourra plus être modifiée et doit être initialisée dès sa déclaration,\n on la déclare comme une constante avec le mot réservé",
+            "Dans une classe, on accède à ses variables grâce au mot clé"};
+    private String choises2[][] = {{"a) aucundes choix", "b).JAVA", "c).Class"}, {"a) aucundes choix", "b) BonjourNous sommes en 2018!", "c)Nous sommes en 2018!"},
+            {"a)vrai", "b)faux"}, {"a) aucundes choix", "b)final", "c)const"}, {"a) aucundes choix", "b)this", "c)super"}};
+    private String answers2[] = {"c).Class", "c)Nous sommes en 2018!", "a)vrai", "b)fina", "b)this"};
     private String userAns2[] = new String[5];
 
 
     // for level 3
-    private String qs3[] = {"hhhh 3", "ddddddddd 3", "fffffffffff 3", "fffffffff 3", "fifth 3", "sixth 3", "seventh 3", "eighth 3"};
+    private String qs3[] = {"question 1", "question 2", "question 3", "question 4", "Question 5"};
     private String choises3[][] = {{"1", "2", "3"}, {"1", "2"}, {"1", "2", "3"}, {"1", "2"}, {"1", "2", "3"}, {"1", "2", "3"}};
     private String answers3[] = {"1", "1", "1", "1", "1"};
     private String userAns3[] = new String[5];
@@ -119,35 +124,11 @@ public class Controller implements Initializable {
     /** check if user can pass to the next question */
     private void check(int target) {
         timer.cancel();
-        if (sum >= target && level == 1) {
+        if (sum >= target) {
 
             /** cancel the timer */
             try {
                 Parent root = FXMLLoader.load(getClass().getResource("goToSecondQuiz.fxml"));
-                Scene scene = new Scene(root, 950, 900);
-                scene.getStylesheets().add(getClass().getResource("application.css").toExternalForm());
-                Main.window.setScene(scene);
-            } catch (Exception e) {
-                e.printStackTrace();
-            }
-            //setToWhite();
-        }
-        else if (sum >= target && level == 2) {
-            /** cancel the timer */
-            try {
-                Parent root = FXMLLoader.load(getClass().getResource("goToThirdQuiz.fxml"));
-                Scene scene = new Scene(root, 950, 900);
-                scene.getStylesheets().add(getClass().getResource("application.css").toExternalForm());
-                Main.window.setScene(scene);
-            } catch (Exception e) {
-                e.printStackTrace();
-            }
-            //setToWhite();
-        }
-        else if (sum >= target && level == 3) {
-            /** cancel the timer */
-            try {
-                Parent root = FXMLLoader.load(getClass().getResource("fele.fxml"));
                 Scene scene = new Scene(root, 950, 900);
                 scene.getStylesheets().add(getClass().getResource("application.css").toExternalForm());
                 Main.window.setScene(scene);
